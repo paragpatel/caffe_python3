@@ -21,7 +21,7 @@ jobs:
       run: |
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD 
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag caffe_python3:$(date +%s)
+      run: docker build . --file cpu/Dockerfile --tag caffe_python3:$(date +%s)
       
     - name: Docker Push
       run: docker push pegome/caffe_python3:cpu
